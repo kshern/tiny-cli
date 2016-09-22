@@ -1,0 +1,33 @@
+{
+  "name": "tiny",
+  "description": "cli for tinypng",
+  "version": "1.0.0",
+  "author":"shern",
+  "keywords": [
+    "toolkit",
+    "cli"
+  ],
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "bin": {
+    "tiny": "./bin/tiny.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "tinify": "^1.3.0"
+  },
+  "scripts": {
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
