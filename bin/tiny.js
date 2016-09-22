@@ -11,11 +11,9 @@ var Tiny = require('../lib/Tiny.js');
 var commander = require('commander');
 
 commander
-    .version('0.0.1');//声明tiny的版本号
-
-commander
-    .command('start <key>')//声明hi下有一个命令叫start
-    .action(function(key) {//start命令的实现体
+    .version('1.0.4')//声明tiny的版本号
+    .arguments('<key>')
+     .action(function(key) {//start命令的实现体
         fs.exists('dist',(exists)=>{
             if(!exists){
                 fs.mkdir('dist',()=>{
