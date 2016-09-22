@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 'use strict';
-var path=require('path')
-// var config = require()
-var fetch=require('node-fetch')
-var fs= require('fs')
+var path=require('path');
+
+var fs= require('fs');
 
 
-var Tiny = require('../lib/Tiny.js')
+var Tiny = require('../lib/Tiny.js');
 
 var commander = require('commander');
 
