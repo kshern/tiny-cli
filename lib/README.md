@@ -12,9 +12,9 @@ Windows下环境变量查看设置为：我的电脑->属性->高级设置->环�
 根据npm的系统变量路径打开npm目录，如下图，我们可以看到pm2文件和pm2.cmd文件：
 
 
-打开文件就能发现其实是两个脚本，pm2 --option.cmd对应Windows下的脚本，pm2 --option对应*nix下的脚本，主要内容其实就是执行了\node_modules\pm2 --option\bin\pm2 --option
+打开文件就能发现其实是两个脚本，pm2.cmd对应Windows下的脚本，pm2对应*nix下的脚本，主要内容其实就是执行了\node_modules\pm2 --option\bin\pm2 --option
 
-打开\node_modules\pm2\bin\pm2 --option文件，第一句为
+打开\node_modules\pm2\bin\pm2 文件，第一句为
 
     #!/usr/bin/env node
 

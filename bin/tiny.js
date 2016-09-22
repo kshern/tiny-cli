@@ -24,8 +24,7 @@ commander
                 })
             }
         })
-
-        new Tiny({pathFrom:process.cwd(),pathTo:path.join(process.cwd(),'dist'),key:key||'XJgNHlcs17oCYxLanv-BWaBB3EAxVbjs'}).run()
+        new Tiny({pathFrom:process.cwd(),pathTo:path.join(process.cwd(),'dist'),key:key}).run()
     });
 
 commander.parse(process.argv);//解析用户输入的参数并触发回调
