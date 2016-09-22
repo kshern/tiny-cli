@@ -11,13 +11,13 @@ var Tiny = require('../lib/Tiny.js');
 var commander = require('commander');
 
 commander
-    .version('1.0.5')//声明tiny的版本号
+    .version('1.0.9')//声明tiny的版本号
     .arguments('<key>')
      .action(function(key) {//start命令的实现体
         fs.exists('dist',(exists)=>{
             if(!exists){
                 fs.mkdir('dist',()=>{
-                    console.log('dist 文件不存在，已新建')
+                    console.log('dist文件夹不存在，已新建')
                 })
             }
         })

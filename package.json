@@ -1,11 +1,11 @@
 {
-  "name": "@jv/tiny",
+  "name": "tiny-cli",
   "description": "cli for tinypng",
-  "version": "1.0.5",
-  "author":"kshern",
-  "main":"./lib/tiny.js",
+  "version": "1.0.9",
+  "author": "kshern",
+  "main": "./lib/tiny.js",
   "keywords": [
-    "toolkit",
+    "tinypng",
     "cli"
   ],
   "files": [
@@ -17,15 +17,13 @@
     "tiny": "./bin/tiny.js"
   },
   "dependencies": {
-    "babel-runtime":"^6.11.6",
-    "tinify": "^1.3.0",
-    "commander": "^0.1.1"
+    "babel-runtime": "^6.11.6",
+    "commander": "^2.9.0",
+    "tinify": "^1.3.0"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "scripts": {
-    "compile" : "babel ./src/Tiny.js -o ./lib/Tiny.js"
+    "compile": "babel ./src/Tiny.js -o ./lib/Tiny.js"
   },
   "engine-strict": true,
   "engines": {

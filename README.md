@@ -1,12 +1,16 @@
-# tiny
+# tiny-cli
 
-该cli 用于 tinypng压缩图片
+this cli is used for tinypng
 
+## install
 
+npm i -g tiny-cli
 
-打开终端，在图片目录下输入tiny <key> 即可
+## Usage
 
-##编译
+tiny  "YOUR_API_KEY"
+
+## compile
 
     npm i -g babel-cli
 
