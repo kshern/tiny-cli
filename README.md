@@ -8,5 +8,7 @@
 
 ##编译
 
-    babel .\src\Tiny.js -o .\lib\Tiny.js
+    npm i -g babel-cli
+
+    npm run compile
 
