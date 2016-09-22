@@ -1,7 +1,7 @@
 {
   "name": "@jv/tiny",
   "description": "cli for tinypng",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author":"kshern",
   "main":"./lib/tiny.js",
   "keywords": [

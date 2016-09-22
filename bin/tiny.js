@@ -11,7 +11,7 @@ var Tiny = require('../lib/Tiny.js');
 var commander = require('commander');
 
 commander
-    .version('1.0.4')//声明tiny的版本号
+    .version('1.0.5')//声明tiny的版本号
     .arguments('<key>')
      .action(function(key) {//start命令的实现体
         fs.exists('dist',(exists)=>{
