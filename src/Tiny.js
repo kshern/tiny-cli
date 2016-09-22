@@ -28,7 +28,7 @@ var fs = require('fs')
     async goTiny(file) {
         var time1 = new Date().getTime();
         var source = await tinify.fromFile(this.pathFrom+'/'+file);
-        await source.toFile(this.pathTo+'/'+file, (err) =>if(err){console.log(err)});
+        await source.toFile(this.pathTo+'/'+file, (err) =>{if(err){console.log(err)}});
         var time2 = new Date().getTime();
         return time2 - time1;
     }

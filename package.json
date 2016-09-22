@@ -2,7 +2,8 @@
   "name": "tiny",
   "description": "cli for tinypng",
   "version": "1.0.0",
-  "author":"shern",
+  "author":"kshern",
+  "main":"./lib/tiny.js",
   "keywords": [
     "toolkit",
     "cli"
