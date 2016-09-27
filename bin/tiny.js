@@ -12,7 +12,7 @@ var commander = require('commander');
 var currentKey = keyList[0].current || keyList[1];
 
 commander
-    .version('1.1.1')//声明tiny的版本号
+    .version('1.1.4')//声明tiny的版本号
     .arguments('<key>')
     .action(function (key) {//start命令的实现体
         var key = key || currentKey;
@@ -70,6 +70,7 @@ commander.command('add <key>')
 
 commander.command('use <index>')
     .action(function (index) {
+
         if (keyList[index] != undefined) {
             keyList[0].current = keyList[index];
             fs.writeFile(path.join(__dirname, '../lib/key.json'), JSON.stringify(keyList), (err) => {
@@ -79,6 +80,8 @@ commander.command('use <index>')
                     console.log('\n切换成功，当前API KEY: ' + keyList[index] + '\n')
                 }
             })
+        }else{
+            console.log('不存在该API KEY')
         }
     });
 
