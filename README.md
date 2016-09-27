@@ -24,7 +24,7 @@ this cli is used for tinypng
 
     tiny add <"YOUR_API_KEY">
 
-输出格式为 <index> ----- "YOUR_API_KEY" 
+输出格式为 index ----- "YOUR_API_KEY" 
 
 ## 切换API KEY
 
