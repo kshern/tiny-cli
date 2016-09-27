@@ -20,7 +20,13 @@ this cli is used for tinypng
     
 ## 查看包含的API KEY
 
+所有 API KEY
+
     tiny ls
+
+当前 API KEY
+
+    tiny current
 
 ## 添加API KEY 
 

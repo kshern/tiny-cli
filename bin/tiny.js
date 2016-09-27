@@ -12,7 +12,7 @@ var commander = require('commander');
 var currentKey = keyList[0].current || keyList[1];
 
 commander
-    .version('1.1.4')//声明tiny的版本号
+    .version('1.1.5')//声明tiny的版本号
     .arguments('<key>')
     .action(function (key) {//start命令的实现体
         var key = key || currentKey;
