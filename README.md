@@ -17,6 +17,8 @@ Enter picture folder and then use command
 
     tiny ls
 
+    tiny current
+
 ## add API KEY 
 
     tiny add <"YOUR_API_KEY">
