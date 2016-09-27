@@ -8,36 +8,32 @@ this cli is used for tinypng
 
 ## Usage
 
+Enter picture folder and then use command
+
     tiny run
 
-## 修改Tiny.js后编译
-
-    npm i -g babel-cli
-
-    npm run compile
     
-## 查看包含的API KEY
+## check API KEY
 
     tiny ls
 
-## 添加API KEY 
+## add API KEY 
 
     tiny add <"YOUR_API_KEY">
 
-输出格式为 index ----- "YOUR_API_KEY" 
+output format: index ----- "YOUR_API_KEY" 
 
-## 切换API KEY
+## change API KEY
 
     tiny use <index>
 
 
 
-每个API KEY每月限额500张图片，超过请自行添加
+The first 500 compressions each month are free
 
 
-## Windows系统
+## OS Windows
 
-在Windows系统下会执行注册表写入，将图片压缩功能集成到鼠标右键，功能如下：
 
 1. 点击文件夹右键tinypng => 压缩目标文件夹下图片
 
