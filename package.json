@@ -1,9 +1,10 @@
 {
-  "name": "tiny-cli",
+  "name": "@jv/tiny-cli",
   "description": "cli for tinypng",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "author": "kshern",
   "main": "./lib/tiny.js",
+  "_installable": true,
   "keywords": [
     "tinypng",
     "cli"
@@ -23,7 +24,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "compile": "babel ./src/Tiny.js -o ./lib/Tiny.js"
+      "postinstall":"node ./lib/install.js",
+      "compile": "babel ./src/Tiny.js -o ./lib/Tiny.js"
   },
   "engine-strict": true,
   "engines": {
