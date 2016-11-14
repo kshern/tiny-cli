@@ -40,12 +40,6 @@ this cli is used for tinypng
 
 ## 内置API KEY
 
-<table>
-    <tr><td>邮箱</td><td>密码</td><td>API KEY</td></tr>
-    <tr><td>jv_fe_01@163.com</td><td>MhxzKhl</td><td>zBgZBRTRizrMBd8MzbQcKnJ_hvBc3u7F</td></tr>
-    <tr><td>jv_fe_02@163.com</td><td>MhxzKhl</td><td>TK0SQqJqCvGrCivjWJZvOXB2bKTdAg2x</td></tr>
-    <tr><td>jv_fe_03@163.com</td><td>MhxzKhl</td><td>L-R9eUg9bs_4nnJhiFr8sZnb6VliM8Lc</td></tr> 
-</table>
 
 每个API KEY每月限额500张图片，超过请自行添加
 
