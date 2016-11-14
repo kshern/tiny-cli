@@ -4,7 +4,7 @@ this cli is used for tinypng
 
 ## install
 
-    cnpm i -g @jv/tiny-cli
+    cnpm i -g tiny-cli
 
 ## Usage
 
