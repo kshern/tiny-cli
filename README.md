@@ -4,6 +4,7 @@ this cli is used for tinypng
 
 ## install
 
+<<<<<<< HEAD
     cnpm i -g @jv/tiny-cli
 
 ## Usage
@@ -53,6 +54,40 @@ this cli is used for tinypng
 ## Windows系统
 
 在Windows系统下会执行注册表写入，将图片压缩功能集成到鼠标右键，功能如下：
+=======
+    npm i -g tiny-cli
+
+## Usage
+
+Enter picture folder and then use command
+
+    tiny run
+
+    
+## check API KEY
+
+    tiny ls
+
+    tiny current
+
+## add API KEY 
+
+    tiny add <"YOUR_API_KEY">
+
+output format: index ----- "YOUR_API_KEY" 
+
+## change API KEY
+
+    tiny use <index>
+
+
+
+The first 500 compressions each month are free
+
+
+## OS Windows
+
+>>>>>>> 68c324c4e094b4a164beb3ead43aed3019c8ef26
 
 1. 点击文件夹右键tinypng => 压缩目标文件夹下图片
 
