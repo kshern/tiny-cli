@@ -58,7 +58,7 @@ commander.command('add <key>')
     .action(function (key) {
         new Tiny({ key: key }).valid(() => {
             keyList.push(key)
-            fs.writeFile(path.join(__dirname, '../key.json'), JSON.stringify(keyList), (err) => {
+            fs.writeFile(path.join(__dirname, '../lib/key.json'), JSON.stringify(keyList), (err) => {
                 if (err) {
                     console.log(err)
                 } else {
