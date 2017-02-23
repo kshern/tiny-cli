@@ -4,7 +4,7 @@ this cli is used for tinypng
 
 ## install
 
-    cnpm i -g tiny-cli
+    npm i -g tiny-cli
 
 ## Usage
 
@@ -14,9 +14,9 @@ this cli is used for tinypng
 
 修改src目录下的Tiny.js后，因为使用了async/await异步上传压缩，需要利用babel编译，生成到lib目录下
 
-    cnpm i -g babel-cli
+    npm i -g babel-cli
 
-    cnpm run compile
+    npm run compile
     
 ## 查看包含的API KEY
 
