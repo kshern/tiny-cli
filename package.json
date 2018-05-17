@@ -23,14 +23,12 @@
   },
   "homepage": "https://github.com/kshern/tiny-cli",
   "dependencies": {
-    "babel-runtime": "^6.11.6",
     "commander": "^2.9.0",
     "tinify": "^1.3.0"
   },
   "devDependencies": {},
   "scripts": {
-      "postinstall":"node ./lib/install.js",
-      "compile": "babel ./src/Tiny.js -o ./lib/Tiny.js"
+    "postinstall": "node ./lib/install.js"
   },
   "engine-strict": true,
   "engines": {

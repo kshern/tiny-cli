@@ -28,6 +28,10 @@ commander
 
 commander.command('run [file...]')
     .action(function (file) {
+        // console.log(file)
+
+        var fileAll = file.join(' ')
+        // console.log(fileAll)
         var key = currentKey;
         if (key == '') {
             console.log("\n当前没有API KEY，请利用tiny add添加\n")
@@ -41,7 +45,7 @@ commander.command('run [file...]')
             }
         });
 
-        new Tiny({ pathFrom: process.cwd(), pathTo: path.join(process.cwd(), 'dist'), key: key }).run(file[0])
+        new Tiny({ pathFrom: process.cwd(), pathTo: path.join(process.cwd(), 'dist'), key: key }).run(fileAll)
 
     });
 
@@ -52,7 +56,7 @@ commander.command('ls')
             if (i == 0) return
             console.log('  ' + i + '   ----- ' + v)
         })
-    });
+    });k
 
 commander.command('add <key>')
     .action(function (key) {

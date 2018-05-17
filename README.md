@@ -10,13 +10,6 @@ this cli is used for tinypng
 
     tiny run
 
-## 修改源码
-
-修改src目录下的Tiny.js后，因为使用了async/await异步上传压缩，需要利用babel编译，生成到lib目录下
-
-    npm i -g babel-cli
-
-    npm run compile
     
 ## 查看包含的API KEY
 
