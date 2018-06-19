@@ -56,7 +56,7 @@ commander.command('ls')
             if (i == 0) return
             console.log('  ' + i + '   ----- ' + v)
         })
-    });k
+    });
 
 commander.command('add <key>')
     .action(function (key) {
