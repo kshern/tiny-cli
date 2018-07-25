@@ -2,9 +2,9 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Shern
 */
-var tinify = require('tinify')
-var path = require('path')
-var fs = require('fs')
+let tinify = require('tinify')
+let path = require('path')
+let fs = require('fs')
 
 
 class Tiny {
@@ -14,15 +14,16 @@ class Tiny {
         tinify.key = option && option.key || '';
     }
 
-    //读取目录函数
-    readdir(dir) {
-        return new Promise((resolve, reject) => {
-            fs.readdir(dir, (err, data) => {
-                if (err) reject(error)
-                resolve(data)
-            })
-        })
-    }
+    //重构为同步函数 
+    // //读取目录函数
+    // readdir(dir) {
+    //     return new Promise((resolve, reject) => {
+    //         fs.readdir(dir, (err, data) => {
+    //             if (err) reject(error)
+    //             resolve(data)
+    //         })
+    //     })
+    // }
 
     //验证key是否可用
 
@@ -39,7 +40,7 @@ class Tiny {
     //异步执行压缩
     async goTiny(file) {
         console.log('开始压缩" ' + file + ' "')
-        var source = await tinify.fromFile(this.pathFrom + '/' + file);
+        let source = await tinify.fromFile(this.pathFrom + '/' + file);
         let toFile = new Promise((resolve, reject) => {
             source.toFile(this.pathTo + '/' + file, (err) => {
                 if (err instanceof tinify.AccountError) {
@@ -60,7 +61,7 @@ class Tiny {
     }
     //异步读取目录下图片
     async ls() {
-        var files = await this.readdir(this.pathFrom), reg = /(\.jpg)|(\.png)$/;
+        let files = await fs.readdirSync(this.pathFrom), reg = /(\.jpg)|(\.png)$/;
         return files.filter((file) => {
             return reg.test(file)
         })
@@ -68,38 +69,33 @@ class Tiny {
 
     //过滤文件类型
     checkfile(fileName) {
-        var reg = /(\.jpg)|(\.png)$/;
+        let reg = /(\.jpg)|(\.png)$/;
         return reg.test(fileName)
     }
 
     // 执行
-    run(pic) {
+    async run(picOrg) {
         var that = this
-        if (!pic) {
-            this.ls().then(v => {
-                let array = v || []
-                array.map((file) => {
-                    // console.log(tiny.toString())
-                    let time1 = new Date().getTime()
-                    return that.goTiny(file).then((value) => {
-
-                        let time2 = new Date().getTime()
-                        let result = time2 - time1
-                        console.log('" ' + file + ' "压缩完成，耗时' + result + '毫秒')
-                    }).catch((err) => {
-                        console.log(err)
-                    })
+        if (!picOrg) {
+            let files = await this.ls();
+            files.map((file) => {
+                let time1 = new Date().getTime();
+                return that.goTiny(file).then((value) => {
+                    let time2 = new Date().getTime()
+                    let result = time2 - time1
+                    console.log('" ' + file + ' "压缩完成，耗时' + result + '毫秒')
+                }).catch((err) => {
+                    console.error(err)
                 })
             })
         } else {
-            var reg = /(\.jpg)|(\.png)$/;
-            var pic = path.basename(pic);
-            console.log(pic)
+            let reg = /(\.jpg)|(\.png)$/;
+            let pic = path.basename(picOrg);
             if (reg.test(pic)) {
-                var time1 = new Date().getTime()
+                let time1 = new Date().getTime()
                 this.goTiny(pic).then(() => {
-                    var time2 = new Date().getTime()
-                    var result = time2 - time1
+                    let time2 = new Date().getTime()
+                    let result = time2 - time1
                     console.log('" ' + pic + ' "压缩完成，耗时' + result + '毫秒')
                 }).catch((err) => {
                     console.log(err)

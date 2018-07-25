@@ -3,7 +3,7 @@
   "description": "cli for tinypng",
   "version": "1.0.0",
   "author": "kshern",
-  "main": "./lib/tiny.js",
+  "main": "./src/tiny.js",
   "_installable": true,
   "keywords": [
     "tinypng",
@@ -28,11 +28,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "node ./lib/install.js"
+    "postinstall": "node ./scripts/install.js"
   },
   "engine-strict": true,
   "engines": {
-    "node": ">= 0.12"
+    "node": ">= 8.9.1"
   },
   "licenses": [
     {

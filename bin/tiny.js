@@ -2,10 +2,10 @@
 
 'use strict';
 var path = require('path');
-var keyList = require(path.resolve(__dirname, '../lib/key.json'));
+var keyList = require(path.resolve(__dirname, '../src/key.json'));
 var fs = require('fs');
 var cp = require('child_process');
-var Tiny = require('../lib/Tiny.js');
+var Tiny = require('../src/Tiny.js');
 
 var commander = require('commander');
 
@@ -14,20 +14,19 @@ var currentKey = keyList[0].current || keyList[1];
 commander
     .version('1.1.5')//声明tiny的版本号
     .arguments('<key>')
-    .action(function (key) {//start命令的实现体
+    .action(async function (key) {//start命令的实现体
         var key = key || currentKey;
-        fs.exists('dist', (exists) => {
-            if (!exists) {
-                fs.mkdir('dist', () => {
-                    console.log('dist文件夹不存在，已新建')
-                });
-            }
-        });
+        let isDistExists = await fs.existsSync('dist')
+        if (!isDistExists) {
+            fs.mkdir('dist', () => {
+                console.log('dist文件夹不存在，已新建')
+            });
+        }
         new Tiny({ pathFrom: process.cwd(), pathTo: path.join(process.cwd(), 'dist'), key: key }).run()
     });
 
 commander.command('run [file...]')
-    .action(function (file) {
+    .action(async function (file) {
         // console.log(file)
 
         var fileAll = file.join(' ')
@@ -37,13 +36,12 @@ commander.command('run [file...]')
             console.log("\n当前没有API KEY，请利用tiny add添加\n")
             return;
         }
-        fs.exists('dist', (exists) => {
-            if (!exists) {
-                fs.mkdir('dist', () => {
-                    console.log('\n未找到dist目录，已新建\n')
-                });
-            }
-        });
+        let isDistExists = await fs.existsSync('dist')
+        if (!isDistExists) {
+            fs.mkdir('dist', () => {
+                console.log('dist文件夹不存在，已新建')
+            });
+        }
 
         new Tiny({ pathFrom: process.cwd(), pathTo: path.join(process.cwd(), 'dist'), key: key }).run(fileAll)
 
@@ -83,7 +81,7 @@ commander.command('use <index>')
                     console.log('\n切换成功，当前API KEY: ' + keyList[index] + '\n')
                 }
             })
-        }else{
+        } else {
             console.log('不存在该API KEY')
         }
     });
@@ -95,14 +93,14 @@ commander.command('current')
 
 commander.command('delMenu')
     .action(function () {
-            cp.exec(path.resolve(__dirname,'../lib/delReg.bat'), (err, stdout, stderr) => {
-                if (err) {
-                    console.log(err)
-                    return;
-                } else {
-                    console.log('右键菜单删除成功')
-                }
-            });
+        cp.exec(path.resolve(__dirname, '../scripts/delReg.bat'), (err, stdout, stderr) => {
+            if (err) {
+                console.log(err)
+                return;
+            } else {
+                console.log('右键菜单删除成功')
+            }
+        });
     });
 
 commander.parse(process.argv);//解析用户输入的参数并触发回调
